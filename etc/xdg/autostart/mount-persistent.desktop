@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=mount-persistent
+Name=link persistent folder
+Comment=link persistent folder names to match current locale
+Terminal=false
+NotShowIn=KDE;LXQt;
+NoDisplay=true
+Type=Application
+StartupNotify=false
+X-KDE-autostart-after=panel
+

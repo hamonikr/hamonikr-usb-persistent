@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if which systemctl >/dev/null 2>&1
+then
+    systemctl stop hamonikr-usb-persistent.service
+    systemctl disable hamonikr-usb-persistent.service
+    systemctl daemon-reload || true
+fi

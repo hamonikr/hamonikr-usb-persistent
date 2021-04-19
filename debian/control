@@ -1,0 +1,17 @@
+Source: hamonikr-usb-persistent
+Section: utils
+Priority: optional
+Maintainer: HamoniKR <pkg@hamonikr.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: hamonikr-usb-persistent
+Architecture: all
+Depends: 
+Replaces: 
+Description: USB persistent folder link service
+ Live USB persistent folder link.
+ .
+ 라이브 USB 부팅 시 쓰기 가능한 폴더를 바탕화면에 표시.
+
+

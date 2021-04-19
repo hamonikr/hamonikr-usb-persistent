@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ -f "$HOME/.config/user-dirs.dirs" ]; then
+    source $HOME/.config/user-dirs.dirs
+    DT_NAME="$XDG_DESKTOP_DIR"
+elif [ ! -f "$HOME/.config/user-dirs.dirs" ] && [ -f "/etc/xdg/user-dirs.defaults" ]; then
+    source /etc/xdg/user-dirs.defaults
+    DT_NAME="$HOME/$DESKTOP"
+fi
+
+echo "$DT_NAME"
+echo $persistence_folder
+
+if [ -f "/usr/bin/live-usb-persistent" ]; then
+    
+    source /usr/bin/live-usb-persistent
+    echo $root_persistence_partition/$persistence_folder
+
+    if [ -d "$root_persistence_partition/$persistence_folder" ]; then
+        ln -s $root_persistence_partition/$persistence_folder "$DT_NAME"
+    else 
+        rm -f "$DT_NAME/$persistence_folder" || true
+    fi    
+fi

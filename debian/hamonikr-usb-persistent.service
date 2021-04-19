@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount USB persistent partition
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/live-usb-persistent enable
+ExecStop=/usr/bin/live-usb-persistent disable
+
+[Install]
+WantedBy=multi-user.target

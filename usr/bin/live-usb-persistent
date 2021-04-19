@@ -1,0 +1,33 @@
+#!/bin/bash
+
+persistence_folder=mydata
+
+if [ ! -e "/dev/disk/by-label/writable" ] && [ -e "/dev/disk/by-label/casper-rw" ]; then
+    root_persistence=casper-rw
+else
+    root_persistence=writable
+fi
+
+if [ -f "/etc/mtab" ]; then
+    root_persistence_partition=$(cat /etc/mtab | $root_persistence | cut -d' ' -f 2)
+else
+    echo "Could not found /etc/mtab file"
+    exit
+fi    
+
+if [ ! -z "$1" ]; then
+
+    if [ x"$1" == "xenable" ]; then
+        if [ -e "/dev/disk/by-label/$root_persistence" ]; then
+
+            if [ ! -d "$root_persistence_partition/$persistence_folder" ]; then
+                mkdir $root_persistence_partition/$persistence_folder
+                chmod 777 $root_persistence_partition/$persistence_folder
+            fi
+
+        fi
+    elif [ x"$1" == "xdisable" ]; then
+        continue
+    fi
+
+fi    

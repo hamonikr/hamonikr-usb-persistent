@@ -1,0 +1,6 @@
+hamonikr-usb-persistent (1.0.0) jin; urgency=medium
+
+  * Initial release
+   - support hamonikr 4.0 jin
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Apr 2021 14:34:37 +0900
