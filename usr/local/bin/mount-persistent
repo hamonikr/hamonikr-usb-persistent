@@ -16,7 +16,7 @@ if [ -f "/usr/bin/live-usb-persistent" ]; then
     source /usr/bin/live-usb-persistent
     echo $root_persistence_partition/$persistence_folder
 
-    if [ -d "$root_persistence_partition/$persistence_folder" ]; then
+    if [ -d "$root_persistence_partition/$persistence_folder" ] && [ ! -f "$DT_NAME/$persistence_folder" ]; then
         ln -s $root_persistence_partition/$persistence_folder "$DT_NAME"
     else 
         rm -f "$DT_NAME/$persistence_folder" || true

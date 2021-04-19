@@ -9,7 +9,7 @@ else
 fi
 
 if [ -f "/etc/mtab" ]; then
-    root_persistence_partition=$(cat /etc/mtab | $root_persistence | cut -d' ' -f 2)
+    root_persistence_partition=$(cat /etc/mtab | grep "$root_persistence" | cut -d' ' -f 2)
 else
     echo "Could not found /etc/mtab file"
     exit

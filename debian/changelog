@@ -1,3 +1,11 @@
+hamonikr-usb-persistent (1.0.1) jin; urgency=medium
+
+  * Fix bug in usr/bin/live-usb-persistent
+  * Update usr/local/bin/mount-persistent
+   - Add check feature if exist file in Desktop
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Apr 2021 15:23:49 +0900
+
 hamonikr-usb-persistent (1.0.0) jin; urgency=medium
 
   * Initial release
